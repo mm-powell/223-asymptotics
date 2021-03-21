@@ -1,0 +1,814 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28297,        806]
+NotebookOptionsPosition[     24469,        738]
+NotebookOutlinePosition[     24919,        756]
+CellTagsIndexPosition[     24876,        753]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Math 223: Homework 2", "Title",
+ CellChangeTimes->{{3.819477029542458*^9, 3.8194770325147047`*^9}, {
+  3.821379293198147*^9, 
+  3.821379296097085*^9}},ExpressionUUID->"197654a4-4d8f-4ad2-acd2-\
+0426bba106a8"],
+
+Cell["Maia Powell ", "Author",
+ CellChangeTimes->{{3.819477041266364*^9, 3.81947704456911*^9}, {
+  3.820791496315102*^9, 
+  3.820791498900507*^9}},ExpressionUUID->"47fdc244-5ee2-4b42-93c3-\
+40f677fdf9ef"],
+
+Cell["7 February 2021", "Affiliation",
+ CellChangeTimes->{{3.8194774638175488`*^9, 3.819477466618027*^9}, {
+   3.820791541430621*^9, 3.8207915437346478`*^9}, {3.821379669618865*^9, 
+   3.821379678688252*^9}, 
+   3.821740084763582*^9},ExpressionUUID->"581392a7-3011-4211-898e-\
+5aefcdf8effb"],
+
+Cell["\<\
+For this homework, we will review the classification of points (ordinary, \
+regular singular, irregular singular) for specific differential equations. We \
+will use Fuchs\[CloseCurlyQuote] theory to anticipate the properties of \
+expansions of solutions about specific points, and compute these expansions. \
+\>", "Text",
+ CellChangeTimes->{{3.8213799329407253`*^9, 
+  3.8213800087908173`*^9}},ExpressionUUID->"6d3eaef7-7e37-4ab2-a063-\
+b8c68396b23f"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 1", "Section",
+ CellChangeTimes->{{3.8194770755713477`*^9, 
+  3.8194770765366144`*^9}},ExpressionUUID->"3b0f5f64-fd7d-4b7d-9281-\
+4b7c9c73d5a2"],
+
+Cell["Solutions for Problem 1 are below. ", "Text",
+ CellChangeTimes->{{3.821741270380927*^9, 
+  3.821741275406308*^9}},ExpressionUUID->"28cb7596-193c-4901-8162-\
+4f8d9e2a03ce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 2", "Section",
+ CellChangeTimes->{{3.819477185401244*^9, 
+  3.8194771863519216`*^9}},ExpressionUUID->"3f070b75-5760-46e2-8dfd-\
+1b5d3e237d45"],
+
+Cell[TextData[{
+ "According to Fuchs\[CloseCurlyQuote] theorem, we would expect the Radius of \
+Convergence around ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dba96cac-0d10-4c36-a3e3-ca1b15de44dd"],
+ " to be 1, as the nearest singularity occurs at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1d67c65a-dbc5-4989-a986-4c2298a3c849"],
+ ". "
+}], "Text",
+ CellChangeTimes->{
+  3.821742767546055*^9},ExpressionUUID->"8ba0b57d-602d-4529-8548-\
+f883b5c79d9f"],
+
+Cell["Solving the initial-value problem, we obtain the following:", "Text",
+ CellChangeTimes->{{3.821736764241482*^9, 3.8217368380403757`*^9}, {
+  3.821742447422206*^9, 3.821742466352528*^9}, {3.821743340774897*^9, 
+  3.8217433408626432`*^9}},ExpressionUUID->"be797723-a9ed-46ff-a2a4-\
+953d839d7387"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "1"}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}], "*", 
+         RowBox[{
+          RowBox[{"y", "''"}], "[", "x", "]"}]}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", "x"}], "-", "6"}], ")"}], "*", 
+         RowBox[{
+          RowBox[{"y", "'"}], "[", "x", "]"}]}], " ", "+", " ", 
+        RowBox[{"2", "*", 
+         RowBox[{"y", "[", "x", "]"}]}]}], " ", "\[Equal]", " ", "0"}], ",", 
+      " ", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", "2"}], ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "x", "]"}], ",", " ", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.821736227247415*^9, 3.821736301818181*^9}, {
+  3.8217366617039957`*^9, 3.8217366756312323`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"4e0fd069-8f5e-4c58-8fbf-c19f3862ea44"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox["4", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "x"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8217366396093903`*^9, 3.821736677574945*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"ac487fa9-ecda-43ae-8136-bf5d1e2a0a38"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We then obtain the following Taylor Series representation of this solution \
+about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3f9d4e7e-ab48-4e23-976a-f8e6cb6e6b27"],
+ ": "
+}], "Text",
+ CellChangeTimes->{{3.821742777731846*^9, 3.8217427869178762`*^9}, {
+  3.8217428697263317`*^9, 3.821742872019306*^9}, {3.821744384775106*^9, 
+  3.82174439680107*^9}},ExpressionUUID->"da243424-4458-418a-8730-\
+2dd4bbf641ec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["4", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", "x"}]]}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.82173669934338*^9, 3.821736715296274*^9}, {
+  3.821737055975093*^9, 3.821737070967556*^9}, {3.8217375426384077`*^9, 
+  3.821737542760066*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"a13d0621-792a-41f2-9fd7-c465194de1da"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"2", "+", "x", "+", 
+   FractionBox[
+    SuperscriptBox["x", "2"], "2"], "+", 
+   FractionBox[
+    SuperscriptBox["x", "3"], "4"], "+", 
+   FractionBox[
+    SuperscriptBox["x", "4"], "8"], "+", 
+   FractionBox[
+    SuperscriptBox["x", "5"], "16"], "+", 
+   FractionBox[
+    SuperscriptBox["x", "6"], "32"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "7"],
+    SeriesData[$CellContext`x, 0, {}, 0, 7, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {2, 1, 
+    Rational[1, 2], 
+    Rational[1, 4], 
+    Rational[1, 8], 
+    Rational[1, 16], 
+    Rational[1, 32]}, 0, 7, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.821736917893817*^9, 3.8217369694987993`*^9, {3.8217370666509733`*^9, 
+   3.821737071181714*^9}, 3.821737543705522*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"7240811c-cc76-4104-baba-a632a06dd3d6"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Observe that this series is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "0"}]], "\[Infinity]"], 
+    RowBox[{
+     SuperscriptBox["2", 
+      RowBox[{"1", "-", "n"}]], 
+     SuperscriptBox["x", "n"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "12bfb4fa-7ed2-477a-8d0a-1d0f0f03cc41"],
+ ". Using the Ratio Test, we find that the Radius of Convergence is thus 2. "
+}], "Text",
+ CellChangeTimes->{{3.821737271187592*^9, 3.821737321065337*^9}, {
+   3.82173942545428*^9, 3.8217395451073933`*^9}, 3.821740109304182*^9, {
+   3.8217412961291113`*^9, 3.821741297915061*^9}, {3.821743283245076*^9, 
+   3.8217432833761578`*^9}},ExpressionUUID->"8dfd931f-4f92-485f-a35f-\
+f5a69aef8bd1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 3", "Section",
+ CellChangeTimes->{{3.8194772128885565`*^9, 
+  3.819477213817498*^9}},ExpressionUUID->"53360077-b126-4736-89d5-\
+442e353af9f0"],
+
+Cell[TextData[StyleBox["Part A", "Subtitle"]], "Text",
+ CellChangeTimes->{{3.821380843296371*^9, 
+  3.821380844242456*^9}},ExpressionUUID->"aef26d88-530b-4ed9-a520-\
+14bec57487a8"],
+
+Cell[TextData[{
+ "According to Fuchs\[CloseCurlyQuote] theorem, we would expect the Radius of \
+Convergence around ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e4a54664-5f0a-4b82-bed7-e897eb0a9b37"],
+ "  to be 0 for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"xy", "''"}], "+", "y"}], "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,
+  FontWeight->"Bold",ExpressionUUID->"8961517e-97d2-4c45-96cc-b23ff7ede551"],
+ ", as the nearest singularity in fact occurs at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9fa32e49-a73d-44d9-8271-6517147eec86"],
+ ". \n\nWe then obtain the following Taylor Series representation of the \
+solution about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "76f0b04d-3f98-400c-9f2f-13034dae537c"],
+ ": "
+}], "Text",
+ CellChangeTimes->{{3.8217428951194267`*^9, 3.821742978182971*^9}, {
+   3.821743011744481*^9, 3.8217430181673107`*^9}, {3.8217430662550573`*^9, 
+   3.821743074532731*^9}, 3.8217431676776333`*^9, {3.8217433078048286`*^9, 
+   3.8217433092084417`*^9}, 3.821743418464773*^9, {3.821743503248837*^9, 
+   3.82174352130402*^9}, {3.8217438074142933`*^9, 3.821743832927167*^9}, {
+   3.82174426808608*^9, 
+   3.821744277596549*^9}},ExpressionUUID->"c0966e89-bdb3-49ba-bf35-\
+cb1bb7d9b9bc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"AsymptoticDSolveValue", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "*", 
+        RowBox[{
+         RowBox[{"y", "''"}], "[", "x", "]"}]}], " ", "+", "  ", 
+       RowBox[{"y", "[", "x", "]"}]}], " ", "\[Equal]", " ", "0"}], ",", 
+     RowBox[{"y", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.821461501243944*^9, 3.821461530546319*^9}, {
+   3.8214626677304497`*^9, 3.821462667967594*^9}, {3.821735652366558*^9, 
+   3.8217356595140963`*^9}, {3.8217357043278837`*^9, 
+   3.8217357045255947`*^9}, {3.821735776331703*^9, 3.8217357974779*^9}, {
+   3.8217358312294817`*^9, 3.821735845212837*^9}, {3.821741770426609*^9, 
+   3.821741770756331*^9}, {3.8217439374673567`*^9, 3.821743947972542*^9}, 
+   3.821744584417637*^9},
+ CellLabel->"In[34]:=",ExpressionUUID->"4bcd8498-5a66-453c-8f18-c825bb49c10f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TemplateBox[{"1"},
+    "C"], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      TemplateBox[{"1"},
+       "C"], "+", 
+      TemplateBox[{"2"},
+       "C"], "-", 
+      RowBox[{
+       TemplateBox[{"1"},
+        "C"], " ", 
+       RowBox[{"Log", "[", "x", "]"}]}]}], ")"}], " ", "x"}], "+", 
+   RowBox[{
+    FractionBox["1", "4"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "5"}], " ", 
+       TemplateBox[{"1"},
+        "C"]}], "-", 
+      RowBox[{"2", " ", 
+       TemplateBox[{"2"},
+        "C"]}], "+", 
+      RowBox[{"2", " ", 
+       TemplateBox[{"1"},
+        "C"], " ", 
+       RowBox[{"Log", "[", "x", "]"}]}]}], ")"}], " ", 
+    SuperscriptBox["x", "2"]}], "+", 
+   RowBox[{
+    FractionBox["1", "36"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"10", " ", 
+       TemplateBox[{"1"},
+        "C"]}], "+", 
+      RowBox[{"3", " ", 
+       TemplateBox[{"2"},
+        "C"]}], "-", 
+      RowBox[{"3", " ", 
+       TemplateBox[{"1"},
+        "C"], " ", 
+       RowBox[{"Log", "[", "x", "]"}]}]}], ")"}], " ", 
+    SuperscriptBox["x", "3"]}], "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "47"}], " ", 
+        TemplateBox[{"1"},
+         "C"]}], "-", 
+       RowBox[{"12", " ", 
+        TemplateBox[{"2"},
+         "C"]}], "+", 
+       RowBox[{"12", " ", 
+        TemplateBox[{"1"},
+         "C"], " ", 
+        RowBox[{"Log", "[", "x", "]"}]}]}], ")"}], " ", 
+     SuperscriptBox["x", "4"]}], "1728"], "+", 
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"2"},
+      "C"], " ", 
+     SuperscriptBox["x", "5"]}], "2880"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "101"],
+    SeriesData[$CellContext`x, 0, {}, 0, 101, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+    C[1], C[1] + C[2] - C[1] Log[$CellContext`x], 
+    Rational[1, 4] ((-5) C[1] - 2 C[2] + 2 C[1] Log[$CellContext`x]), 
+    Rational[1, 36] (10 C[1] + 3 C[2] - 3 C[1] Log[$CellContext`x]), 
+    Rational[1, 1728] ((-47) C[1] - 12 C[2] + 12 C[1] Log[$CellContext`x]), 
+    Rational[1, 2880] C[2]}, 0, 101, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.821461535860149*^9, 3.821462668281603*^9, 3.8217356637967453`*^9, 
+   3.821735704909849*^9, 3.821735777303959*^9, 3.821735847815757*^9, 
+   3.821741771225011*^9, {3.821743939137969*^9, 3.8217439482497377`*^9}, 
+   3.821744584672325*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"6579f1d0-7eb4-490f-8dc6-6b4d5d7d4e92"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We then observe that there is a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"log", "(", "x", ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a5bd758c-0160-44a0-850d-631687f20a1b"],
+ " term present in the series, which once again gives us a singularity at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "57b22499-3bc6-49ac-83e8-10a03132f7d8"],
+ ", giving us a Radius of Convergence of 0, as predicted by Fuchs\
+\[CloseCurlyQuote] theorem. "
+}], "Text",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8217431745552397`*^9, 3.821743305509717*^9}, {
+  3.821743737390388*^9, 3.821743742382592*^9}, {3.821744876208235*^9, 
+  3.821744883622995*^9}},ExpressionUUID->"b75d92f0-42a0-4996-bcfe-\
+3a9c5c312e93"],
+
+Cell["", "Text",ExpressionUUID->"2afed3f9-42ee-4d40-9a2e-b862aced59cf"],
+
+Cell[TextData[StyleBox["Part B", "Subtitle"]], "Text",
+ CellChangeTimes->{{3.8213808346925707`*^9, 
+  3.821380837776997*^9}},ExpressionUUID->"94292fd4-9155-49da-b9a1-\
+bcf5954306af"],
+
+Cell[TextData[{
+ "According to Fuchs\[CloseCurlyQuote] theorem, we would expect the Radius of \
+Convergence around ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c5e13bdd-0ab1-459f-833e-31f514df8471"],
+ "  to be 0 for ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"y", "''"}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["e", "x"], "-", "1"}], ")"}], "y"}]}], "=", "0"}],
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "07a89d75-92ef-4f8b-bfc3-56e8b5b97adf"],
+ ", as the nearest singularity in fact occurs at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "58717868-bf34-4948-82e7-96fd63c8c117"],
+ ". \n\nWe then obtain the following Taylor Series representation of the \
+solution about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "96baaaac-7669-4b2d-b9c4-23fc4a2f1302"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.821743421578464*^9, 3.8217434889464617`*^9}, {
+  3.821743545482753*^9, 3.821743575194643*^9}, {3.821743615165188*^9, 
+  3.821743616800619*^9}, {3.821743720549554*^9, 3.821743731691572*^9}, {
+  3.821743810595521*^9, 3.8217438370983467`*^9}, {3.821744038745122*^9, 
+  3.8217440395009937`*^9}, {3.821744293783929*^9, 
+  3.821744301054668*^9}},ExpressionUUID->"bee2f4d9-e1a3-45a6-bff8-\
+56d2513d6385"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"AsymptoticDSolveValue", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "''"}], "[", "x", "]"}], " ", "+", "  ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["e", "x"], "-", "1"}], ")"}], "*", 
+        RowBox[{"y", "[", "x", "]"}]}]}], " ", "\[Equal]", " ", "0"}], ",", 
+     RowBox[{"y", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8214615472676773`*^9, 3.821461568322213*^9}, {
+   3.821462670721076*^9, 3.821462670804471*^9}, {3.821735861566893*^9, 
+   3.821735877152049*^9}, {3.821739938727466*^9, 3.8217399389376087`*^9}, 
+   3.821744578341522*^9},
+ CellLabel->"In[33]:=",ExpressionUUID->"ce25c70a-10df-41f2-96d9-e0dfe17c339a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TemplateBox[{"1"},
+    "C"], "+", 
+   RowBox[{
+    TemplateBox[{"2"},
+     "C"], " ", "x"}], "-", 
+   RowBox[{
+    FractionBox["1", "6"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      TemplateBox[{"1"},
+       "C"], " ", 
+      RowBox[{"Log", "[", "e", "]"}]}], ")"}], " ", 
+    SuperscriptBox["x", "3"]}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "12"]}], " ", 
+       TemplateBox[{"2"},
+        "C"], " ", 
+       RowBox[{"Log", "[", "e", "]"}]}], "-", 
+      RowBox[{
+       FractionBox["1", "24"], " ", 
+       TemplateBox[{"1"},
+        "C"], " ", 
+       SuperscriptBox[
+        RowBox[{"Log", "[", "e", "]"}], "2"]}]}], ")"}], " ", 
+    SuperscriptBox["x", "4"]}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "40"]}], " ", 
+       TemplateBox[{"2"},
+        "C"], " ", 
+       SuperscriptBox[
+        RowBox[{"Log", "[", "e", "]"}], "2"]}], "-", 
+      RowBox[{
+       FractionBox["1", "120"], " ", 
+       TemplateBox[{"1"},
+        "C"], " ", 
+       SuperscriptBox[
+        RowBox[{"Log", "[", "e", "]"}], "3"]}]}], ")"}], " ", 
+    SuperscriptBox["x", "5"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "101"],
+    SeriesData[$CellContext`x, 0, {}, 0, 101, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+    C[1], 
+    C[2], 0, Rational[-1, 6] C[1] Log[$CellContext`e], 
+    Rational[-1, 12] C[2] Log[$CellContext`e] + 
+    Rational[-1, 24] C[1] Log[$CellContext`e]^2, 
+    Rational[-1, 40] C[2] Log[$CellContext`e]^2 + 
+    Rational[-1, 120] C[1] Log[$CellContext`e]^3}, 0, 101, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.8214615735384007`*^9, 3.821462671103135*^9, 
+  3.821735878165319*^9, 3.82173993926792*^9, 3.82174457857724*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"d24c9f0b-9921-44e8-9620-968de9caed97"]
+}, Open  ]],
+
+Cell["\<\
+We then observe that this function is smooth and analytic everywhere, thus \
+the Radius of Convergence appears to be infinite. \
+\>", "Text",
+ CellChangeTimes->{{3.821743847017849*^9, 
+  3.821743886366294*^9}},ExpressionUUID->"69f87a20-26a6-4f3e-8972-\
+4a03439fe09a"],
+
+Cell["", "Text",ExpressionUUID->"7886d8c7-339c-4508-8cc4-4a9aaa51b11a"],
+
+Cell[TextData[StyleBox["Part C", "Subtitle"]], "Text",
+ CellChangeTimes->{{3.821380851049787*^9, 
+  3.821380851994605*^9}},ExpressionUUID->"ad9e2a1e-2405-45de-a189-\
+9a0cbeffa0b2"],
+
+Cell[TextData[{
+ "According to Fuchs\[CloseCurlyQuote] theorem, we would expect the Radius of \
+Convergence around ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2775461f-29a7-4438-b359-207f0143faa6"],
+ "  to be 0 for ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"sin", "(", "x", ")"}], ")"}], 
+       RowBox[{"y", "''"}]}], "-", 
+      RowBox[{"2", 
+       RowBox[{"(", 
+        RowBox[{"cos", "(", "x", ")"}], ")"}], 
+       RowBox[{"y", "'"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"sin", "(", "x", ")"}], ")"}], "y"}]}], "=", "0"}],
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "76e4768d-ba85-4513-8e56-59caeb04bf42"],
+ ", as the nearest singularity in fact occurs at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e4be4279-ee9e-4d98-b500-5f0a5c9a4c15"],
+ ". \n\nWe then obtain the following Taylor Series representation of the \
+solution about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "06a57c07-7e5c-4388-8241-f36c10dcde43"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.8217440178224087`*^9, 3.821744035210032*^9}, {
+   3.821744102104014*^9, 3.821744141606303*^9}, 
+   3.821744305512228*^9},ExpressionUUID->"8b92c6c3-1df2-49d3-9a22-\
+05a451b3b70c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"AsymptoticDSolveValue", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Sin", "[", "x", "]"}], ")"}], "*", 
+        RowBox[{
+         RowBox[{"y", "''"}], "[", "x", "]"}]}], " ", "-", "  ", 
+       RowBox[{"2", "*", 
+        RowBox[{"(", 
+         RowBox[{"Cos", "[", "x", "]"}], ")"}], "*", 
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "x", "]"}]}], " ", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Sin", "[", "x", "]"}], ")"}], "*", 
+        RowBox[{"y", "[", "x", "]"}]}]}], "\[Equal]", " ", "0"}], ",", 
+     RowBox[{"y", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8214615827202187`*^9, 3.8214616231319027`*^9}, {
+   3.821462673506111*^9, 3.8214626955565443`*^9}, {3.8214627337214947`*^9, 
+   3.821462734335669*^9}, {3.8214627803721123`*^9, 3.821462780705937*^9}, {
+   3.821735907268751*^9, 3.821735926070322*^9}, {3.821739901607361*^9, 
+   3.821739901811257*^9}, {3.821744554644847*^9, 3.8217445885056763`*^9}, {
+   3.8217446292405863`*^9, 3.8217447028616133`*^9}, {3.8217498213657007`*^9, 
+   3.821749828636787*^9}, {3.821749928432776*^9, 3.821749943157001*^9}, 
+   3.821750059136704*^9},
+ CellLabel->"In[44]:=",ExpressionUUID->"92870d32-b632-4179-818e-b33e7560edf2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TemplateBox[{"1"},
+    "C"], "-", 
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"1"},
+      "C"], " ", 
+     SuperscriptBox["x", "2"]}], "2"], "+", 
+   RowBox[{
+    TemplateBox[{"2"},
+     "C"], " ", 
+    SuperscriptBox["x", "3"]}], "+", 
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"1"},
+      "C"], " ", 
+     SuperscriptBox["x", "4"]}], "24"], "-", 
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"2"},
+      "C"], " ", 
+     SuperscriptBox["x", "5"]}], "10"], "+", 
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"2"},
+      "C"], " ", 
+     SuperscriptBox["x", "7"]}], "280"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "101"],
+    SeriesData[$CellContext`x, 0, {}, 0, 101, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+    C[1], 0, Rational[-1, 2] C[1], 
+    C[2], Rational[1, 24] C[1], Rational[-1, 10] C[2], 0, Rational[1, 280] 
+    C[2]}, 0, 101, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.8217446939791822`*^9, 3.8217447032079906`*^9}, {
+  3.8217498781133413`*^9, 3.821749878186226*^9}, {3.8217500535796413`*^9, 
+  3.8217500594264174`*^9}},
+ CellLabel->"Out[44]=",ExpressionUUID->"0e8a28d5-6359-45ac-95af-60b4e3bfe4c3"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We then observe that this representation is comprised of polynomials, and \
+will likely have a closed form similar to that of ",
+ Cell[BoxData[
+  FormBox["cosine", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2287d06e-53bb-426d-b0f8-a1c23c07e9f6"],
+ " and sine, leading us to expect that it is smooth and analytic everywhere, \
+and thus the Radius of Convergence appears to be infinite. "
+}], "Text",
+ CellChangeTimes->{{3.821744165038034*^9, 3.821744203089528*^9}, {
+  3.821744911017323*^9, 3.8217449250790863`*^9}, {3.821750067789452*^9, 
+  3.821750106844645*^9}},ExpressionUUID->"a40ad2bc-f521-4a28-82be-\
+0818d2a91e00"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.821744615629149*^9, 
+  3.8217446230131197`*^9}},ExpressionUUID->"7afe7e36-f3a5-4755-9ebc-\
+ebec8c48f45a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{866, 828},
+WindowMargins->{{Automatic, 63}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d75e67b7-b5ca-4e2d-9fea-0daa88af3a50"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 214, 4, 98, "Title",ExpressionUUID->"197654a4-4d8f-4ad2-acd2-0426bba106a8"],
+Cell[797, 28, 204, 4, 31, "Author",ExpressionUUID->"47fdc244-5ee2-4b42-93c3-40f677fdf9ef"],
+Cell[1004, 34, 291, 5, 31, "Affiliation",ExpressionUUID->"581392a7-3011-4211-898e-5aefcdf8effb"],
+Cell[1298, 41, 461, 8, 81, "Text",ExpressionUUID->"6d3eaef7-7e37-4ab2-a063-b8c68396b23f"],
+Cell[CellGroupData[{
+Cell[1784, 53, 158, 3, 67, "Section",ExpressionUUID->"3b0f5f64-fd7d-4b7d-9281-4b7c9c73d5a2"],
+Cell[1945, 58, 177, 3, 35, "Text",ExpressionUUID->"28cb7596-193c-4901-8162-4f8d9e2a03ce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2159, 66, 156, 3, 67, "Section",ExpressionUUID->"3f070b75-5760-46e2-8dfd-1b5d3e237d45"],
+Cell[2318, 71, 639, 19, 58, "Text",ExpressionUUID->"8ba0b57d-602d-4529-8548-f883b5c79d9f"],
+Cell[2960, 92, 300, 4, 35, "Text",ExpressionUUID->"be797723-a9ed-46ff-a2a4-953d839d7387"],
+Cell[CellGroupData[{
+Cell[3285, 100, 1136, 32, 52, "Input",ExpressionUUID->"4e0fd069-8f5e-4c58-8fbf-c19f3862ea44"],
+Cell[4424, 134, 373, 10, 50, "Output",ExpressionUUID->"ac487fa9-ecda-43ae-8136-bf5d1e2a0a38"]
+}, Open  ]],
+Cell[4812, 147, 508, 13, 35, "Text",ExpressionUUID->"da243424-4458-418a-8730-2dd4bbf641ec"],
+Cell[CellGroupData[{
+Cell[5345, 164, 480, 12, 47, "Input",ExpressionUUID->"a13d0621-792a-41f2-9fd7-c465194de1da"],
+Cell[5828, 178, 921, 28, 54, "Output",ExpressionUUID->"7240811c-cc76-4104-baba-a632a06dd3d6"]
+}, Open  ]],
+Cell[6764, 209, 790, 20, 35, "Text",ExpressionUUID->"8dfd931f-4f92-485f-a35f-f5a69aef8bd1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7591, 234, 156, 3, 67, "Section",ExpressionUUID->"53360077-b126-4736-89d5-442e353af9f0"],
+Cell[7750, 239, 180, 3, 46, "Text",ExpressionUUID->"aef26d88-530b-4ed9-a520-14bec57487a8"],
+Cell[7933, 244, 1521, 39, 104, "Text",ExpressionUUID->"c0966e89-bdb3-49ba-bf35-cb1bb7d9b9bc"],
+Cell[CellGroupData[{
+Cell[9479, 287, 1051, 23, 30, "Input",ExpressionUUID->"4bcd8498-5a66-453c-8f18-c825bb49c10f"],
+Cell[10533, 312, 2558, 85, 92, "Output",ExpressionUUID->"6579f1d0-7eb4-490f-8dc6-6b4d5d7d4e92"]
+}, Open  ]],
+Cell[13106, 400, 821, 20, 58, "Text",ExpressionUUID->"b75d92f0-42a0-4996-bcfe-3a9c5c312e93",
+ InitializationCell->True],
+Cell[13930, 422, 71, 0, 35, "Text",ExpressionUUID->"2afed3f9-42ee-4d40-9a2e-b862aced59cf"],
+Cell[14004, 424, 182, 3, 46, "Text",ExpressionUUID->"94292fd4-9155-49da-b9a1-bcf5954306af"],
+Cell[14189, 429, 1592, 44, 104, "Text",ExpressionUUID->"bee2f4d9-e1a3-45a6-bff8-56d2513d6385"],
+Cell[CellGroupData[{
+Cell[15806, 477, 939, 23, 33, "Input",ExpressionUUID->"ce25c70a-10df-41f2-96d9-e0dfe17c339a"],
+Cell[16748, 502, 1975, 64, 90, "Output",ExpressionUUID->"d24c9f0b-9921-44e8-9620-968de9caed97"]
+}, Open  ]],
+Cell[18738, 569, 277, 6, 58, "Text",ExpressionUUID->"69f87a20-26a6-4f3e-8972-4a03439fe09a"],
+Cell[19018, 577, 71, 0, 35, "Text",ExpressionUUID->"7886d8c7-339c-4508-8cc4-4a9aaa51b11a"],
+Cell[19092, 579, 180, 3, 46, "Text",ExpressionUUID->"ad9e2a1e-2405-45de-a189-9a0cbeffa0b2"],
+Cell[19275, 584, 1560, 47, 104, "Text",ExpressionUUID->"8b92c6c3-1df2-49d3-9a22-05a451b3b70c"],
+Cell[CellGroupData[{
+Cell[20860, 635, 1489, 34, 52, "Input",ExpressionUUID->"92870d32-b632-4179-818e-b33e7560edf2"],
+Cell[22352, 671, 1252, 42, 54, "Output",ExpressionUUID->"0e8a28d5-6359-45ac-95af-60b4e3bfe4c3"]
+}, Open  ]],
+Cell[23619, 716, 665, 13, 81, "Text",ExpressionUUID->"a40ad2bc-f521-4a28-82be-0818d2a91e00"],
+Cell[24287, 731, 154, 3, 30, "Input",ExpressionUUID->"7afe7e36-f3a5-4755-9ebc-ebec8c48f45a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
